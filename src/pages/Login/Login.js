@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Button } from "../../components/Button";
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Container } from "../../components/container";
 import { Text } from "../../components/text";
 import { FontFamily } from "../../global/enum";
@@ -10,7 +10,6 @@ import MediaQuery from "../../tools/MediaQuery";
 import { ScreenSize } from "../../global/enum";
 import { HorBox } from "../../components/sizedBox";
 
-const baseURL = "http://localnep.com/";
 const baseAPIURL = "http://localnep.com/api/";
 
 function Login() {
@@ -150,6 +149,7 @@ function Login() {
             <img
               width="100%"
               height="100%"
+              alt=""
               src="http://localhost:3000/img/dressnobackground.png"
             />
           </Container>

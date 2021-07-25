@@ -42,12 +42,11 @@ const Container = ({
     const paddingArray = getMargins({ properties: padding, callFunction: getSides });
     const borderRadius = getMargins({ properties: borderradius, callFunction: getSides });
     const overflows = getMargins({ properties: overflow, callFunction: getDimension })
-   
+
     const mystyle = { // you can add more to make it even more generic
         height: height,
         width: width,
         backgroundColor: backgroundColor,
-        boxShadow: shadow,
         display: display,
         /*padding */
         paddingTop: paddingArray[0],

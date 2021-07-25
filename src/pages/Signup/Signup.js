@@ -9,7 +9,6 @@ import { Input } from "../../components/dropdown";
 import { Text } from "../../components/text";
 import { Button } from "../../components/Button";
 
-const baseURL = "http://localnep.com/";
 const baseAPIURL = "http://localnep.com/api/";
 
 function Signup() {
@@ -112,6 +111,7 @@ function Signup() {
         <Container {...allStyle.top}>
           <Container {...allStyle.imgContainer}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/dhakatopi.jpg"

@@ -16,10 +16,11 @@ import Product from "./pages/Product/Product";
 import AddProduct from "./pages/Product/AddProduct";
 import EditProduct from "./pages/Product/EditProduct";
 import Cart from "./pages/Cart/Cart";
-import Whishlist from "./pages/Whishlist/Whishlist";
+import Wishlist from "./pages/Wishlist/Wishlist";
 import Purchase from "./pages/Purchase/Purchase";
 import NotFound from "./pages/NotFound/Notfound";
 import Women from "./pages/Shop/Women";
+import ProductView from "./pages/Shop/ProductView";
 
 ReactDOM.render(
   <Router>
@@ -33,16 +34,22 @@ ReactDOM.render(
       <Route exact path="/login" component={Login}></Route>
       <Route exact path="/signup" component={Signup}></Route>
       {/* product routes */}
-      <Route exact path="/product" component={Product}></Route>
-      <Route exact path="/product/add" component={AddProduct}></Route>
-      <Route exact path="/product/edit/:id" component={EditProduct}></Route>
-      {/* categories */}
+      <Route exact path="/admin/product" component={Product}></Route>
+      <Route exact path="/admin/product/add" component={AddProduct}></Route>
+      <Route
+        exact
+        path="/admin/product/edit/:id"
+        component={EditProduct}
+      ></Route>
+      {/* shop */}
       <Route exact path="/men" component={Men}></Route>
       <Route exact path="/women" component={Women}></Route>
+      <Route exact path="/product/:id" component={ProductView}></Route>
+
       {/* logged user pages */}
-      <Route exact path="/cart/:id" component={Cart}></Route>
-      <Route exact path="/whishlist/:id" component={Whishlist}></Route>
-      <Route exact path="/purchase/:id" component={Purchase}></Route>
+      <Route exact path="/cart" component={Cart}></Route>
+      <Route exact path="/wishlist" component={Wishlist}></Route>
+      <Route exact path="/purchase" component={Purchase}></Route>
       <Route component={NotFound} />
     </Switch>
   </Router>,

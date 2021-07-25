@@ -2,14 +2,13 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { DropDown } from "../../components/dropdown";
-import { getUser } from "../../global/api";
+import { HorBox } from "../../components/sizedBox";
 import { getSizes } from "../../global/generic";
 
 const baseURL = "http://localnep.com/";
 const baseAPIURL = "http://localnep.com/api/";
 
 function EditProduct(props) {
-  const user = getUser();
   const history = useHistory();
   const [product, setProduct] = useState({});
   const [img, setImg] = useState("");
@@ -21,11 +20,7 @@ function EditProduct(props) {
   function getProduct() {
     console.warn("get Product", props.match.params.id);
     axios
-      .get(baseAPIURL + "product/" + props.match.params.id, {
-        headers: {
-          Authorization: "Bearer " + user.token,
-        },
-      })
+      .get(baseAPIURL + "product/" + props.match.params.id)
       .then((response) => {
         let data = response.data.data;
         console.warn("getPro", data);
@@ -134,21 +129,21 @@ function EditProduct(props) {
               product.size = e.target.value;
             }}
           />
-          <br />
-          <br />
-          <br />
-          <img width="100" height="150" src={baseURL + product.imgPath} />
-          <br />
-          <br />
+          <HorBox height="40px" />
+          <img
+            width="100"
+            height="150"
+            alt=""
+            src={baseURL + product.imgPath}
+          />
+          <HorBox height="40px" />
           <input
             onChange={(e) => setImg(e.target.files[0])}
             type="file"
             name="img"
             className="form-control-file"
           />
-          <br />
-          <br />
-          <br />
+          <HorBox height="40px" />
 
           <button
             type="submit"

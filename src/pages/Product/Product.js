@@ -72,10 +72,15 @@ function Product() {
                   <td>{e.stocks}</td>
                   <td>{e.size}</td>
                   <td>
-                    <img width="100" height="150" src={baseURL + e.imgPath} />
+                    <img
+                      width="100"
+                      alt=""
+                      height="150"
+                      src={baseURL + e.imgPath}
+                    />
                   </td>
                   <td>
-                    <Link to={"product/edit/" + e.id}>
+                    <Link to={"/admin/product/edit/" + e.id}>
                       <Button>Edit</Button>
                     </Link>
                     <br />

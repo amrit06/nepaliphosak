@@ -1,11 +1,13 @@
 import React from "react";
 import { Container } from "../components/container";
 import { Text } from "../components/text";
-import { Button } from "../components/Button";
 import { FontFamily, ScreenSize } from "../global/enum";
 import MediaQuery from "./MediaQuery";
+import "react-toastify/dist/ReactToastify.css";
+import Icon from "./Icon";
 
 function ProductCard({
+  id = "",
   productName = "default",
   price = "default",
   imgPath = "",
@@ -46,10 +48,11 @@ function ProductCard({
 
     icon: {
       width: "30px",
-      height: "100%",
-      backgroundColor: "transparent",
-      margin: "left:3px;right:3px",
-      padding: "all:3px",
+      height: "30px",
+      size: "1.5rem",
+      color: "black",
+      selectedColor: "red",
+      margin: "left:5px;right:5px",
     },
 
     priceContainer: {
@@ -74,20 +77,20 @@ function ProductCard({
     },
 
     headerTextMobile: {
-      size: "1rem",
+      size: "0.8rem",
     },
 
     iconContainerMobile: {
       height: "25px",
     },
 
-    iconMobile: {
-      width: "25px",
-      height: "100%",
-    },
-
     priceMobile: {
       size: "0.8rem",
+    },
+
+    iconMobile: {
+      margin: "all:0px",
+      size: "1rem",
     },
   };
 
@@ -111,35 +114,35 @@ function ProductCard({
 
   return (
     <>
-      <a href="#">
-        <Container {...allStyles.card}>
-          <Container {...allStyles.imgContainer}>
-            <img width="100%" height="100%" src={imgPath}></img>
-          </Container>
-          <Container {...allStyles.headerContainer}>
-            <Text {...allStyles.headerText}>{productName}</Text>
-          </Container>
-          <Container {...allStyles.iconContainer}>
-            <Button {...allStyles.icon}>
-              <img
-                width="100%"
-                height="100%"
-                src="http://localhost:3000/img/cart.png"
-              ></img>
-            </Button>
-            <Container {...allStyles.priceContainer}>
-              <Text {...allStyles.price}>{price}</Text>
-            </Container>
-            <Button {...allStyles.icon}>
-              <img
-                width="100%"
-                height="100%"
-                src="http://localhost:3000/img/heart.png"
-              ></img>
-            </Button>
-          </Container>
+      <Container {...allStyles.card}>
+        <Container {...allStyles.imgContainer}>
+          <a href={"/product/" + id}>
+            <img width="100%" alt="" height="100%" src={imgPath}></img>
+          </a>
         </Container>
-      </a>
+        <Container {...allStyles.headerContainer}>
+          <Text {...allStyles.headerText}>{productName}</Text>
+        </Container>
+        <Container {...allStyles.iconContainer}>
+          <Icon
+            {...allStyles.icon}
+            id={id}
+            icon="fas fa-shopping-cart"
+            session="cartSession"
+          />
+
+          <Container {...allStyles.priceContainer}>
+            <Text {...allStyles.price}>{price}</Text>
+          </Container>
+
+          <Icon
+            id={id}
+            icon="fas fa-heart"
+            session="wishlistSession"
+            {...allStyles.icon}
+          />
+        </Container>
+      </Container>
     </>
   );
 }

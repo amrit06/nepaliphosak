@@ -1,15 +1,11 @@
 import React from "react";
-import { Link } from "../components/link";
 import { Button } from "../components/Button";
 import { Container } from "../components/container";
 import { HorBox } from "../components/sizedBox";
 import { Text } from "../components/text";
 import { FontFamily } from "../global/enum";
-import MediaQuery from "../tools/MediaQuery";
 
 function Footer() {
-  let smallScreen = MediaQuery("(max-width: 800px)");
-
   const allStyles = {
     container: {
       width: "100%",
@@ -60,6 +56,7 @@ function Footer() {
           <Container>
             <Button {...allStyles.icon}>
               <img
+                alt=""
                 width="100%"
                 height="100%"
                 src="http://localhost:3000/img/facebook.png"
@@ -67,6 +64,7 @@ function Footer() {
             </Button>
             <Button {...allStyles.icon}>
               <img
+                alt=""
                 width="100%"
                 height="100%"
                 src="http://localhost:3000/img/instagram.png"
@@ -74,6 +72,7 @@ function Footer() {
             </Button>
             <Button {...allStyles.icon}>
               <img
+                alt=""
                 width="100%"
                 height="100%"
                 src="http://localhost:3000/img/tiktok.png"

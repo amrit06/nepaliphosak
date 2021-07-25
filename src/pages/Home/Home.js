@@ -1,13 +1,10 @@
 import React from "react";
-
 import MediaQuery from "../../tools/MediaQuery";
 import { FontFamily, ScreenSize } from "../../global/enum";
 import { Container } from "../../components/container";
 import { HorBox } from "../../components/sizedBox";
-import { getDimension, getMargins } from "../../global/generic";
 import Carousel from "../../tools/Carousel";
 import { Text } from "../../components/text";
-import { Button } from "../../components/Button";
 import CardGender from "../../tools/CardGender";
 import HorizontalScroller from "../../tools/HorScroller";
 import Footer from "../../tools/Footer";

@@ -1,4 +1,3 @@
-import React from "react";
 
 /* enum is used only on typescript file therefore made array obj */
 export const ScreenSize = {
@@ -15,4 +14,10 @@ export const FontFamily = {
   roboto: "Roboto, sans-serif",
   cursive: "Satisfy, cursive",
   cursive2: "Merienda, cursive",
+};
+
+export const SessionStatus = {
+  NoSession: "null",
+  NonExistential: "0",
+  Exists: "1",
 };

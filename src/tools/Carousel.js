@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { Container } from "../components/container";
-import { Button } from "../components/Button";
-import MediaQuery from "./MediaQuery";
 
 function Carousel() {
   useEffect(() => {
@@ -40,7 +38,6 @@ function Carousel() {
       overflowX: "scroll",
       overflowY: "hidden",
       whiteSpace: "nowrap",
-      backgroundColor: "blue",
       id: "scroller",
     },
     slides: {
@@ -57,6 +54,7 @@ function Carousel() {
           <img
             width="100%"
             height="100%"
+            alt=""
             src="http://localhost:3000/img/hairjewellery.jpeg"
           ></img>
         </Container>
@@ -64,6 +62,7 @@ function Carousel() {
           <img
             width="100%"
             height="100%"
+            alt=""
             src="http://localhost:3000/img/kangaroo.jpeg"
           ></img>
         </Container>
@@ -71,6 +70,7 @@ function Carousel() {
           <img
             width="100%"
             height="100%"
+            alt=""
             src="http://localhost:3000/img/dashlane.png"
           ></img>
         </Container>
@@ -78,6 +78,7 @@ function Carousel() {
           <img
             width="100%"
             height="100%"
+            alt=""
             src="http://localhost:3000/img/kidstopi.jpeg"
           ></img>
         </Container>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container } from "../components/container";
 import { Button } from "../components/Button";
 import MediaQuery from "./MediaQuery";
@@ -27,8 +27,7 @@ function CardGender() {
     card: {
       height: "500px",
       width: "400px",
-      background: "red",
-      borderradius: "all:0px",
+
       margin: "all:20px",
       display: "inline-block",
       position: "relative",
@@ -108,6 +107,7 @@ function CardGender() {
             <img
               width="100%"
               height="100%"
+              alt=""
               src="http://localhost:3000/img/men.jpg"
             />
             <Container {...allStyles.overlap}>
@@ -125,6 +125,7 @@ function CardGender() {
             <img
               width="100%"
               height="100%"
+              alt=""
               src="http://localhost:3000/img/women.jpg"
             />
             <Container {...allStyles.overlap}>
@@ -142,6 +143,7 @@ function CardGender() {
             <img
               width="100%"
               height="100%"
+              alt=""
               src="http://localhost:3000/img/boys.png"
             />
             <Container {...allStyles.overlap}>
@@ -159,6 +161,7 @@ function CardGender() {
             <img
               width="100%"
               height="100%"
+              alt=""
               src="http://localhost:3000/img/girls.jpeg"
             />
             <Container {...allStyles.overlap}>

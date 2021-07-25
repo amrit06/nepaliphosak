@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../../components/container";
-import { Text } from "../../components/text";
-import { Button } from "../../components/Button";
-import { FontFamily } from "../../global/enum";
 import ProductCard from "../../tools/ProductCard";
+import axios from "axios";
 
-function Women() {
-  const productArray = [];
-  for (let index = 0; index < 25; index++) {
-    productArray.push({ name: "some", price: "$$$" });
+const baseAPIURL = "http://localnep.com/api/";
+
+function Men() {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  function getProducts() {
+    axios
+      .get(baseAPIURL + "product", {
+        params: {
+          gender: "female",
+        },
+      })
+      .then((response) => {
+        let result = response.data.data; // beacuse it is array else just get .data
+        setProductList(result);
+      });
   }
 
   const allStyles = {
@@ -21,12 +35,13 @@ function Women() {
 
   return (
     <Container {...allStyles.container}>
-      {productArray.map((element) => (
+      {productList.map((element) => (
         <>
           <ProductCard
+            id={element.id}
             productName={element.name}
             price={element.price}
-            imgPath="http://localhost:3000/img/women.jpg"
+            imgPath={element.imgPath}
           />
         </>
       ))}
@@ -34,4 +49,4 @@ function Women() {
   );
 }
 
-export default Women;
+export default Men;

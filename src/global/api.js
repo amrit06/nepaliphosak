@@ -1,7 +1,5 @@
-import React from "react";
 import axios from "axios";
 
-const baseURL = "http://localnep.com/";
 const baseAPIURL = "http://localnep.com/api/";
 
 /* 
@@ -35,15 +33,39 @@ export const getUser = () => {
   return user;
 };
 
-export const postAPI = ({ route, data }) => {
-  axios.post(baseAPIURL + route, data).then((response) => {
-    let result = response.data;
-    console.warn("postAPI", result);
-
-    return result;
+export const getProduct = async () => {
+  return fetch(baseAPIURL + "product/" + "1", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
-  return {
-    name: "amrit",
-    token: "apple"
+};
+
+export const api = async ({
+  url = "",
+  method = "GET",
+  authToken = null,
+  data = null,
+}) => {
+  const domain = "http://localnep.com/api/";
+  const headers = {
+    Accept: "application/json",
+    "Content-type": "application/json",
   };
+
+  if (authToken) {
+    headers["Authorization"] = "Bearer " + authToken;
+  }
+
+  const options = {
+    method: method,
+    headers: headers,
+  };
+
+  if (data) {
+    options["body"] = data;
+  }
+
+  return fetch(domain + url, options).then((element) => element.json());
 };

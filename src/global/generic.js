@@ -1,12 +1,34 @@
-import React from "react";
-import MediaQuery from "../tools/MediaQuery";
-import { ScreenSize } from "./enum";
-
 export const getSizes = () => {
   let data = [
     { title: "Small", value: "small" },
     { title: "Medium", value: "medium" },
     { title: "Large", value: "large" },
+  ];
+  return data;
+};
+
+export const getGenders = () => {
+  let data = [
+    { title: "Male", value: "male" },
+    { title: "Female", value: "Female" },
+    /*add boys and girls and others later */
+  ];
+  return data;
+};
+
+export const getCategory = () => {
+  let data = [
+    { title: "Shirt", value: "shirt" },
+    { title: "TShirt", value: "tshirt" },
+    { title: "Cap", value: "cap" },
+    { title: "Blazer", value: "blazer" },
+    { title: "Pant", value: "pant" },
+    { title: "Short", value: "short" },
+    { title: "Top", value: "top" },
+    { title: "Saree", value: "saree" },
+    { title: "Lehenga", value: "lehenga" },
+    { title: "Scarf", value: "scarf" },
+    { title: "Shoe", value: "shoe" },
   ];
   return data;
 };
@@ -67,75 +89,3 @@ export const getMargins = ({ properties = "", callFunction = () => {} }) => {
 
   return returnValue;
 };
-
-/* 
-export const getOverflows = ({
-  properties = ""
-})
-=>{
-  const result = [];
-  const flowArray = properties.split(";");
-  const sides = [
-    {prop = "all", active = false, value = "hidden" },
-    {prop = "x", active = false, value = "hidden" },
-    {prop = "y", active = false, value = "hidden" },
-  ];
-
-  flowArray.forEach((element) => {
-      sides.forEach((side)=>{
-        if(element.includes(side.prop)){
-          side.active = true;
-          let valuesArray = element.split(":");
-          side.value = valuesArray[1];
-          return;
-        }
-      });
-  });
-
-  if(sides[0].active){
-    for (let index = 0; (index < sides.length-1); index++) {
-      result.push(sides[0].value);
-    }
-  }else{
-    for (let index = 0; index < (sides.length-1); index++) {
-      result.push(sides[index+1].value);
-    }
-  }
-
-  return result;
-} */
-
-/*
-export const getMargins = ({ properties = "" }) => {
-  const marginArray = properties.split(";");
-  const sides = getSides();
-  const returnValue = []; // return value
-
-  marginArray.forEach((element) => {
-    sides.forEach((side) => {
-      // loop through sides
-      if (element.includes(side.title)) {
-        side.active = true;
-        let arr = element.split(":");
-        side.value = arr[1];
-        return;
-      }
-    });
-  });
-
-  if (sides[0].active) {
-    // if all fill rest with all's value
-    for (let index = 0; index < 4; index++) {
-      //
-      returnValue.push(sides[0].value);
-    }
-  } else {
-    for (let index = 0; index < 4; index++) {
-      //
-      returnValue.push(sides[index + 1].value);
-    }
-  }
-
-  return returnValue;
-};
-*/

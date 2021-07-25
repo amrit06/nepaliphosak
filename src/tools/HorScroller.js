@@ -2,11 +2,7 @@ import React from "react";
 import { Button } from "../components/Button";
 import { Container } from "../components/container";
 
-import MediaQuery from "../tools/MediaQuery";
-
 function HorizontalScroller() {
-  let smallScreen = MediaQuery("(max-width: 800px)");
-
   const slideLeft = () => {
     let scrollerWidth = document.getElementById("horScroller").offsetWidth;
     let scrollAmount = document.getElementById("horScroller").scrollLeft;
@@ -60,7 +56,6 @@ function HorizontalScroller() {
     overlapContianer: {
       height: "",
       width: "100%",
-      display: "block",
       display: "inline-block",
       position: "absolute",
       top: "50%",
@@ -91,6 +86,7 @@ function HorizontalScroller() {
         <Container id="horScroller" {...allStyles.cardContainer}>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/boys.png"
@@ -98,6 +94,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/dashlane.png"
@@ -105,6 +102,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/girls.jpeg"
@@ -112,6 +110,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/kidstopi.jpeg"
@@ -119,6 +118,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/men.jpg"
@@ -126,6 +126,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/women.jpg"
@@ -133,6 +134,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/boys.png"
@@ -140,6 +142,7 @@ function HorizontalScroller() {
           </Container>
           <Container {...allStyles.card}>
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/women.jpg"
@@ -156,6 +159,7 @@ function HorizontalScroller() {
             }}
           >
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/back.png"
@@ -169,6 +173,7 @@ function HorizontalScroller() {
             }}
           >
             <img
+              alt=""
               width="100%"
               height="100%"
               src="http://localhost:3000/img/next.png"

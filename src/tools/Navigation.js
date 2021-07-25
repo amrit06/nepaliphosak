@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { NavBar } from "../components/navbar";
 import { HorBox } from "../components/sizedBox";
 import { Link } from "../components/link";
 import { Button } from "../components/Button";
-import { Container, Row, Column } from "../components/container";
+import { Container } from "../components/container";
 import MediaQuery from "../tools/MediaQuery";
 import { Text } from "../components/text";
 import { FontFamily, ScreenSize } from "../global/enum";
@@ -13,7 +12,6 @@ import { Input } from "../components/dropdown";
 import axios from "axios";
 import { getUser } from "../global/api";
 
-const baseURL = "http://localnep.com/";
 const baseAPIURL = "http://localnep.com/api/";
 
 function Navigation() {
@@ -234,6 +232,7 @@ function Navigation() {
       <Container {...allStyle.navbar}>
         <Button {...allStyle.hamBurger}>
           <img
+            alt=""
             width="20px"
             height="20px"
             src={
@@ -258,6 +257,7 @@ function Navigation() {
           }}
         >
           <img
+            alt=""
             width="20px"
             height="20px"
             src="http://localhost:3000/img/search.png"
@@ -302,12 +302,14 @@ function Navigation() {
         margin="top:60px"
       >
         <Container height="150px"></Container>
-        {sessionStorage.getItem("userSession") ? (
+        {sessionStorage.getItem("userSession") &&
+        JSON.parse(sessionStorage.getItem("userSession")).data.role ===
+          "admin" ? (
           <>
-            <Link {...allStyle.menuLink} route="/product">
+            <Link {...allStyle.menuLink} route="/admin/product">
               Product
             </Link>
-            <Link {...allStyle.menuLink} route="/product/add">
+            <Link {...allStyle.menuLink} route="/admin/product/add">
               Add Product
             </Link>
           </>
@@ -315,7 +317,7 @@ function Navigation() {
           <></>
         )}
         <Link {...allStyle.menuLink} route="/wishlist">
-          Whishlist
+          Wishlist
         </Link>
         <Link {...allStyle.menuLink} route="/cart">
           Cart
